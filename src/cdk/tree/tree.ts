@@ -368,7 +368,7 @@ export class CdkTreeNode<T, K = T> implements FocusableOption, OnDestroy, OnInit
   }
   protected _data: T;
 
-  /* If leaf node, do not assign aria-expanded attribute */
+  /* If leaf node, return true to not assign aria-expanded attribute */
   get isLeafNode(): boolean {
     // If flat tree node data returns false for expandable property, it's a leaf node
     if (

@@ -287,6 +287,10 @@ $_mat-slots: (tokens-mat-slider.$prefix, tokens-mat-slider.get-token-slots());
   width: 100%;
 }
 
+.mdc-slider__tick-mark-end {
+  right: 2px;
+}
+
 .mdc-slider__tick-mark--active,
 .mdc-slider__tick-mark--inactive {
   @include token-utils.use-tokens($_mdc-slots...) {

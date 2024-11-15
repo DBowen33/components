@@ -7,6 +7,9 @@
   <div class="mdc-slider__track--active">
     <div #trackActive class="mdc-slider__track--active_fill"></div>
   </div>
+  <div 
+    class="mdc-slider__tick-mark--inactive mdc-slider__tick-marks mdc-slider__tick-mark-end">
+  </div>
   @if (showTickMarks) {
     <div class="mdc-slider__tick-marks" #tickMarkContainer>
       @if (_cachedWidth) {

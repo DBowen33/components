@@ -392,6 +392,9 @@ export class MatSlider implements AfterViewInit, OnDestroy, _MatSlider {
   /** Whether the slider is rtl. */
   _isRtl: boolean = false;
 
+  /** TranslateX value for end tick mark */
+  _endTickMarkTransformX: string;
+
   private _hasViewInitialized: boolean = false;
 
   /**
@@ -591,6 +594,10 @@ export class MatSlider implements AfterViewInit, OnDestroy, _MatSlider {
   _calcTickMarkTransform(index: number): string {
     // TODO(wagnermaciel): See if we can avoid doing this and just using flex to position these.
     const translateX = index * (this._tickMarkTrackWidth / (this._tickMarks.length - 1));
+    // Don't show last tick mark since permanent one exists
+    if (index === this._tickMarks.length - 1) {
+      return `translateX(-100%)`;
+    }
     return `translateX(${translateX}px`;
   }
 
